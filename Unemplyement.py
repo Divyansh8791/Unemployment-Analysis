@@ -63,24 +63,24 @@ import matplotlib.pyplot as plt
 
 
 # ploting a graph all vs all.
-# sns.pairplot( data=df  )  
+sns.pairplot( data=df  )  
 # plt.show()
 
 
 # ploting the barplot between unemployement rate and region , they will be saperated by Date . 
 
-# sns.barplot(x =df['Unemployed_rate'], y = df['Region']  , data=df , errwidth=0 , hue=df[' Date'] , orient='h'  )  
-# plt.title('Rate of Unemployement during covid behalf of year ' ,fontsize = 20)
-# plt.xlabel('Unemployed_rate' , fontsize=18)
-# plt.ylabel('Region' , fontsize=18)
+sns.barplot(x =df['Unemployed_rate'], y = df['Region']  , data=df , errwidth=0 , hue=df[' Date'] , orient='h'  )  
+plt.title('Rate of Unemployement during covid behalf of year ' ,fontsize = 20)
+plt.xlabel('Unemployed_rate' , fontsize=18)
+plt.ylabel('Region' , fontsize=18)
 # plt.show()
 
 # ploting the barplot between unemployement rate and region , they will be saperated by Area . 
 
-# sns.barplot(x =df['Unemployed_rate'], y = df['Region']  , data=df , errwidth=0 , hue=df['Area']  ) 
-# plt.title('Rate of Unemployement during covid behalf of Area ' ,fontsize = 20) 
-# plt.xlabel('Unemployed_rate' , fontsize=18)
-# plt.ylabel('Region' , fontsize=18)
+sns.barplot(x =df['Unemployed_rate'], y = df['Region']  , data=df , errwidth=0 , hue=df['Area']  ) 
+plt.title('Rate of Unemployement during covid behalf of Area ' ,fontsize = 20) 
+plt.xlabel('Unemployed_rate' , fontsize=18)
+plt.ylabel('Region' , fontsize=18)
 # plt.show()
 
 
@@ -111,7 +111,7 @@ df['Region'] = OrdinalEncoder().fit_transform(df[['Region']])
 # print(df)
 # feature data is in x.
 x = df[[' Estimated Labour Participation Rate (%)' ,'employed_number' , 'Region' ,' Date' ,'Unemployed_rate'  ]] 
-print(x)
+ 
 # target data is in y.
 y = df['Area']  
 
@@ -133,14 +133,14 @@ pred = kn.predict(x_test)
  # PRINTING THE ACCURACY OF OUR MODEL.
 from sklearn.metrics import accuracy_score
 sc = accuracy_score(y_test , pred)
-print('Accuracy : ' , sc*100 ,'%')
+# print('Accuracy : ' , sc*100 ,'%')
 
 
 # PRINTING THE CONFUSION MATRIX .
 from sklearn.metrics import confusion_matrix
 a = confusion_matrix(y_test , pred)
 print()
-print('Confusion metrics : ')
-print(a)
+# print('Confusion metrics : ')
+# print(a)
 print()
  
